@@ -15,4 +15,4 @@ datetime_startrun=$(date +"%Y%m%d%H%M%S")
 # of programs. These flags are not enabled by default, so participants are
 # encouraged to run `scan-build -h` and look through what the tool has to
 # offer. You can enable these flags by editing the line below.
-scan-build -o /vagrant_data/scan make 2>&1 | tee -a "${datetime_startrun}_scan.log"
+scan-build -o /vagrant_data/scan -enable-checker alpha.security make 2>&1 | tee -a "${datetime_startrun}_scan.log"
